@@ -20,3 +20,7 @@ Output: [1,2,5,2]
 ```
 
 ※ バグ残ってる：[1,0,0,4] になった...
+
+# link
+
+https://leetcode.com/problems/add-two-numbers/
