@@ -1,6 +1,6 @@
-from typing import TypeVar, List, Dict
+from typing import Dict, List, TypeVar
 
-INF = int(float('inf'))
+INF = float('inf')
 
 
 class Edge:
