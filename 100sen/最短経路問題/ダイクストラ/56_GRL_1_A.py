@@ -17,22 +17,22 @@ class Edge:
 def dijkstra():
     # V:頂点数, E:辺数, r:始点
     print('入力(頂点数 辺数 始点):')
-    V, E, r = map(int, input().split())
+    V, E, start_index = map(int, input().split())
     # s,t:辺(有向), d:重み
 
     graph: List[List[Edge]] = []
     for i in range(V):
         graph.append([])
+    print('頂点(from) 頂点(to) 重み:')
     for i in range(E):
-        print('頂点(from) 頂点(to) 重み:')
         s, t, w = map(int, input().split())
         e = Edge(t, w)
         graph[s].append(e)
 
     que = []
-    heappush(que, (0, r))  # used_vertex_listの代わりにもなる
+    heappush(que, (0, start_index))  # used_vertex_listの代わりにもなる
     vertex_cost: Dict[int, int] = {i: INF for i in range(V)}
-    vertex_cost[r] = 0
+    vertex_cost[start_index] = 0
     while que:
         # 使用済みでない最小コストの頂点を探す
         min_cost, min_vertex_index = heappop(que)

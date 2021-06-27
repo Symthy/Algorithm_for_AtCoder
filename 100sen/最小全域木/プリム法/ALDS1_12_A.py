@@ -23,19 +23,19 @@ def main():
     for _ in range(n):
         row = list(map(int, input().split()))
         adjacency_matrix.append([(cost, i) for i, cost in enumerate(row) if cost != -1])
-    visited_vertex = [0] * n
+    visited_vertex = [False] * n
     connect_count = 0
     que = [(0, 0)]    # (cost, vertex_index)
     heapify(que)
-    result_cost = 0
+    total_cost = 0
     while True:
         cost, i = heappop(que)
         if visited_vertex[i]:
             continue
 
-        visited_vertex[i] = 1
+        visited_vertex[i] = True
         connect_count += 1
-        result_cost += cost
+        total_cost += cost
 
         # 新たに繋げたノードから行けるところをエンキュー
         for tup in adjacency_matrix[i]:
@@ -43,5 +43,5 @@ def main():
 
         if connect_count >= n:
             break
-    print(result_cost)
+    print(total_cost)
     return
