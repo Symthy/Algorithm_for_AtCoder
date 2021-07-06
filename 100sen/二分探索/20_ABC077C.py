@@ -1,5 +1,8 @@
 """
 https://atcoder.jp/contests/abc077/tasks/arc084_a
+3段の祭壇（中断は上段より大きく、下段は中断より大きくなければならない）
+
+bisect：https://at274.hatenablog.com/entry/2018/01/12/090000
 """
 
 from bisect import bisect_left, bisect_right
