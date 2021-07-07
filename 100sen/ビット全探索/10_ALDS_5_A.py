@@ -4,13 +4,13 @@ https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_5_A&lang=ja
 """
 
 
-def solve(i, m, n, A):
+def bit_search(i, m, n, A):
     if m == 0:
         return True
     if i >= n:
         return False
-    res = solve(i + 1, m, n, A) or solve(i + 1, m - A[i], n, A)
-    return res
+    result = bit_search(i + 1, m, n, A) or bit_search(i + 1, m - A[i], n, A)
+    return result
 
 
 def main():
@@ -20,7 +20,7 @@ def main():
     m_array = list(map(int, input().split()))
 
     for m in m_array:
-        if solve(0, m, n, A):
+        if bit_search(0, m, n, A):
             print("yes")
         else:
             print("no")
