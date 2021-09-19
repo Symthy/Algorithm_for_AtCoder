@@ -22,14 +22,11 @@ def main():
     comb_set = set()
     for x, yend_diff_map in x_to_yend_diff_map.items():
         for x2, yend_diff_map2 in x_to_yend_diff_map.items():
-            if x == x2:
+            if x >= x2:
                 continue
             for key, diff in yend_diff_map.items():
                 if key in yend_diff_map2 and yend_diff_map2[key] == diff:
-                    if x > x2:
-                        comb_set.add(str(x) + ':' + str(x2))
-                    else:
-                        comb_set.add(str(x2) + ':' + str(x))
+                    comb_set.add(str(x) + ':' + str(x2))
 
     print(len(comb_set))
 
