@@ -25,3 +25,11 @@ N = 10 の時
 
 ### 配るDP
 - ABC220 D
+
+## 再起
+デフォルト上限1000だから増やさないと失敗する
+
+```
+import sys
+sys.setrecursionlimit(300000)
+```
